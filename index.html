@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PKL Tracker Pro</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <h1>🚀 PKL TRACKER</h1>
+
+      <!-- CARD PROFIL & LOKASI -->
+      <div class="card">
+        <h3>👤 PROFIL & LOKASI</h3>
+        <div class="form-group">
+          <label>Nama Lengkap:</label>
+          <input
+            type="text"
+            id="userName"
+            placeholder="Nama lengkap kamu"
+            class="form-input"
+          />
+        </div>
+        <div class="form-group">
+          <label>📍 Lokasi PKL Default:</label>
+          <select id="userLocation" class="form-input">
+            <option value="">Pilih Lokasi Default</option>
+            <option value="Lab Komputer 1">Lab Komputer 1</option>
+            <option value="Lab Komputer 2">Lab Komputer 2</option>
+            <option value="Ruang Server">Ruang Server</option>
+            <option value="Ruang Meeting">Ruang Meeting</option>
+            <option value="Kantor Manager">Kantor Manager</option>
+            <option value="Area Produksi">Area Produksi</option>
+            <option value="Ruang Training">Ruang Training</option>
+            <option value="Lapangan">Lapangan</option>
+            <option value="Lainnya">Lainnya...</option>
+          </select>
+          <input
+            type="text"
+            id="customUserLocation"
+            placeholder="Tulis lokasi lainnya..."
+            class="form-input"
+            style="display: none"
+          />
+        </div>
+        <button onclick="saveUserProfile()" class="btn btn-primary">
+          SIMPAN PROFIL 💾
+        </button>
+      </div>
+
+      <!-- CARD ABSENSI -->
+      <div class="card">
+        <h3>⏰ ABSENSI</h3>
+        <button id="checkInBtn" onclick="checkIn()" class="btn btn-success">
+          CHECK-IN 🟢
+        </button>
+        <button
+          id="checkOutBtn"
+          onclick="checkOut()"
+          class="btn btn-danger"
+          disabled
+        >
+          CHECK-OUT 🔴
+        </button>
+        <p id="status">Status: Belum check-in</p>
+      </div>
+
+      <!-- CARD KEGIATAN HARIAN -->
+      <div class="card">
+        <h3>📝 KEGIATAN HARIAN</h3>
+
+        <!-- FORM INPUT -->
+        <div class="form-group">
+          <input
+            type="datetime-local"
+            id="activityDateTime"
+            class="form-input"
+          />
+          <input
+            type="text"
+            id="activityName"
+            placeholder="Nama kegiatan"
+            class="form-input"
+          />
+          <input
+            type="text"
+            id="activityPerson"
+            placeholder="Pelaksana"
+            class="form-input"
+          />
+          <div style="display: flex; gap: 10px; align-items: center">
+            <input
+              type="text"
+              id="activityLocation"
+              placeholder="Lokasi kegiatan"
+              class="form-input"
+              style="flex: 1"
+            />
+            <button
+              type="button"
+              onclick="useDefaultLocation()"
+              class="btn btn-secondary"
+              style="width: auto; padding: 10px"
+            >
+              🔁 Default
+            </button>
+          </div>
+          <input
+            type="text"
+            id="activityNote"
+            placeholder="Keterangan"
+            class="form-input"
+          />
+          <button onclick="addActivity()" class="btn btn-primary">
+            TAMBAH KEGIATAN ➕
+          </button>
+        </div>
+
+        <!-- TABEL KEGIATAN -->
+        <div class="table-container">
+          <table id="activityTable">
+            <thead>
+              <tr>
+                <th>Waktu</th>
+                <th>Kegiatan</th>
+                <th>Pelaksana</th>
+                <th>📍 Lokasi</th>
+                <th>Keterangan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="activityBody">
+              <!-- Data akan muncul di sini -->
+            </tbody>
+          </table>
+        </div>
+        <button
+          onclick="clearAllActivities()"
+          class="btn btn-danger"
+          style="margin-top: 10px"
+        >
+          HAPUS SEMUA 🗑️
+        </button>
+      </div>
+
+      <!-- CARD TUGAS -->
+      <div class="card">
+        <h3>✅ DAFTAR TUGAS</h3>
+        <div class="input-group">
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Tambah tugas baru..."
+          />
+          <button onclick="addTask()" class="btn btn-secondary">
+            TAMBAH ➕
+          </button>
+        </div>
+        <ul id="taskList"></ul>
+      </div>
+
+      <!-- CARD PENGUMUMAN -->
+      <div class="card announcement-card">
+        <h3>📢 PENGUMUMAN</h3>
+        <div id="announcementList">
+          <p>Loading pengumuman...</p>
+        </div>
+        <button onclick="loadAnnouncements()" class="btn btn-info">
+          REFRESH 🔄
+        </button>
+      </div>
+
+      <!-- CARD LAPORAN -->
+      <div class="card">
+        <h3>📊 LAPORAN</h3>
+        <button onclick="generateAndPreviewReport()" class="btn btn-warning">
+          LAPORAN HARIAN 👀
+        </button>
+        <button
+          onclick="generateAndPreviewDetailReport()"
+          class="btn btn-warning"
+        >
+          LAPORAN DETAIL 📈
+        </button>
+        <button onclick="sendReportToAdmin()" class="btn btn-info">
+          KIRIM KE ADMIN 📧
+        </button>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -8,11 +8,17 @@
   </head>
   <body>
     <div class="app-container">
-      <h1>🚀 PKL TRACKER</h1>
-
+      <!-- Ganti h1 yang lama dengan ini: -->
+      <div class="app-header">
+        <div class="app-title">PBL TRACKER</div>
+        <div class="app-subtitle">Kelola Aktivitas PBL dengan Mudah</div>
+      </div>
       <!-- CARD PROFIL & LOKASI -->
       <div class="card">
-        <h3>👤 PROFIL & LOKASI</h3>
+        <div class="card-header">
+          <div class="card-icon">👤</div>
+          <h3>PROFIL & LOKASI</h3>
+        </div>
         <div class="form-group">
           <label>Nama Lengkap:</label>
           <input
@@ -26,14 +32,22 @@
           <label>📍 Lokasi PKL Default:</label>
           <select id="userLocation" class="form-input">
             <option value="">Pilih Lokasi Default</option>
-            <option value="Lab Komputer 1">Lab Komputer 1</option>
-            <option value="Lab Komputer 2">Lab Komputer 2</option>
-            <option value="Ruang Server">Ruang Server</option>
-            <option value="Ruang Meeting">Ruang Meeting</option>
-            <option value="Kantor Manager">Kantor Manager</option>
-            <option value="Area Produksi">Area Produksi</option>
-            <option value="Ruang Training">Ruang Training</option>
-            <option value="Lapangan">Lapangan</option>
+            <option value="Banjarmangu">Banjarmangu</option>
+            <option value="Kejobong">Kejobong</option>
+            <option value="Cilongok">Cilongok</option>
+            <option value="Belik">Belik</option>
+            <option value="Ujung Gagak">Ujung Gagak</option>
+            <option value="Majenang">Majenang</option>
+            <option value="Cilegon">Cilegon</option>
+            <option value="Pakisan">Pakisan</option>
+            <option value="Sumbang">Sumbang</option>
+            <option value="Bumiayu">Bumiayu</option>
+            <option value="Purwojati">Purwojati</option>
+            <option value="Pagaralang">Pagaralang</option>
+            <option value="Gombong">Gombong</option>
+            <option value="Kalibening">Kalibening</option>
+            <option value="Sumpiuh">Sumpiuh</option>
+            <option value="Purworejo">Purworejo</option>
             <option value="Lainnya">Lainnya...</option>
           </select>
           <input
@@ -51,7 +65,11 @@
 
       <!-- CARD ABSENSI -->
       <div class="card">
-        <h3>⏰ ABSENSI</h3>
+        <div class="card-header">
+          <div class="card-icon">⏰</div>
+          <h3>ABSENSI</h3>
+        </div>
+        <h3></h3>
         <button id="checkInBtn" onclick="checkIn()" class="btn btn-success">
           CHECK-IN 🟢
         </button>
@@ -68,6 +86,11 @@
 
       <!-- CARD KEGIATAN HARIAN -->
       <div class="card">
+        <div class="card-header">
+          <div class="card-icon">👤</div>
+          <h3>PROFIL & LOKASI</h3>
+        </div>
+
         <h3>📝 KEGIATAN HARIAN</h3>
 
         <!-- FORM INPUT -->
@@ -125,7 +148,7 @@
                 <th>Waktu</th>
                 <th>Kegiatan</th>
                 <th>Pelaksana</th>
-                <th>📍 Lokasi</th>
+                <th>Lokasi</th>
                 <th>Keterangan</th>
                 <th>Aksi</th>
               </tr>
@@ -146,7 +169,10 @@
 
       <!-- CARD TUGAS -->
       <div class="card">
-        <h3>✅ DAFTAR TUGAS</h3>
+        <div class="card-header">
+          <div class="card-icon">✅</div>
+          <h3>DAFTAR TUGAS</h3>
+        </div>
         <div class="input-group">
           <input
             type="text"
@@ -162,7 +188,10 @@
 
       <!-- CARD PENGUMUMAN -->
       <div class="card announcement-card">
-        <h3>📢 PENGUMUMAN</h3>
+        <div class="card-header">
+          <div class="card-icon">📢</div>
+          <h3>PENGUMUMAN</h3>
+        </div>
         <div id="announcementList">
           <p>Loading pengumuman...</p>
         </div>
@@ -173,7 +202,10 @@
 
       <!-- CARD LAPORAN -->
       <div class="card">
-        <h3>📊 LAPORAN</h3>
+        <div class="card-header">
+          <div class="card-icon">📊</div>
+          <h3>LAPORAN</h3>
+        </div>
         <button onclick="generateAndPreviewReport()" class="btn btn-warning">
           LAPORAN HARIAN 👀
         </button>

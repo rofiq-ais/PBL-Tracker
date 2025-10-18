@@ -656,7 +656,7 @@ function sendReportToAdmin() {
     }
   }
 
-  const adminEmail = "admin@perusahaan.com";
+  const adminEmail = "gar.fariz01@gmail.com";
   const subject = `Laporan PKL - ${new Date().toLocaleDateString("id-ID")} - ${
     localStorage.getItem("userName") || "Peserta PKL"
   }`;
